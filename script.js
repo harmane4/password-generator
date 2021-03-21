@@ -3,15 +3,15 @@
 //Assignment Code + Event Listener to prompt questions when button pushed
 document.querySelector("#generate").addEventListener("click", writePassword);
 
-// Various Arrays 
-var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
-var alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// Various variables for passwords
+var number = String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+var symbol = '!@#$%^&*()+<>';
+var lowerChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+var upperChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 
 // Variable Declaration 
 var confirmLength = "";
-var confirmSpecialCharacter;
+var confirmSymbolCharacter;
 var confirmNumericCharacter;
 var confirmUpperCase;
 var confirmLowerCase;
@@ -27,24 +27,26 @@ function generatePassword() {
       } 
 
     // Determine parameters of password 
-    var confirmSpecialCharacter = confirm("Will your password include special characters?");
-    var confirmNumericCharacter = confirm("Will your password  include numeric characters?");    
-    var confirmLowerCase = confirm("Will your password  include lowercase characters?");
-    var confirmUpperCase = confirm("Will your password  include uppercase characters?");
-      // Loop if answer is outside the parameters 
-      while(confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
-        alert("You must choose at least one parameter");
-        var confirmSpecialCharacter = confirm("Will your password include special characters?");
+    var confirmSymbolCharacter = confirm("Will your password include symbols?");
+    var confirmNumericCharacter = confirm("Will your password  include numbers?");    
+    var confirmLowerCase = confirm("Will your password include lowercase characters?");
+    var confirmUpperCase = confirm("Will your password include uppercase characters?");
+     
+    // Loop if answer is outside the parameters 
+      while(confirmUpperCase === false && confirmLowerCase === false && confirmSymbolCharacter === false && confirmNumericCharacter === false) {
+        alert("You must choose at least one answer");
+        var confirmSybolCharacter = confirm("Will your password include symbols?");
         var confirmNumericCharacter = confirm("Will your password include numeric characters?");    
         var confirmLowerCase = confirm("Will your password  include lowercase characters?");
         var confirmUpperCase = confirm("Will your password  include uppercase characters?");   
     } 
 
-      // Assign an action to the password parameters 
-      var passwordCharacters = []
+      // Assign an action to the password parameters. Concat method joins passwordCharacters and specialChar/number/lowerChar,upperChar and returns new array
+      // Conditional statement only executed if expression is true 
+      var passwordCharacters = [] //create empty array 
       
-    if (confirmSpecialCharacter) {
-      passwordCharacters = passwordCharacters.concat(specialChar)
+    if (confirmSymbolCharacter) {
+      passwordCharacters = passwordCharacters.concat(symbol) 
     }
 
     if (confirmNumericCharacter) {
@@ -52,18 +54,21 @@ function generatePassword() {
     }
       
     if (confirmLowerCase) {
-      passwordCharacters = passwordCharacters.concat(alphaLower)
+      passwordCharacters = passwordCharacters.concat(lowerChar)
     }
 
     if (confirmUpperCase) {
-      passwordCharacters = passwordCharacters.concat(alphaUpper)
+      passwordCharacters = passwordCharacters.concat(upperChar)
     }
 
       console.log(passwordCharacters)
 
       // Empty string to be filled based on for loop selecting random characters from the array
-      var randomPassword = ""
+      var randomPassword = []
       
+      // For loop starts at 0, runs while i is less than length of variable confirmLength
+      // Get a random number and multiply that random number times our passwordCharacters
+      // Get a random number between 0 and the password characters and making sure it is an integer by doing math.floor and this gives random password
       for (var i = 0; i < confirmLength; i++) {
         randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
         console.log(randomPassword)
