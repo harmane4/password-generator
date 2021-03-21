@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --main-bg-color: #e7e9eb;
-  --light-blue: #c0c7cf;
-}
-
 html,
 body,
 .wrapper {
@@ -17,9 +12,18 @@ body,
   padding: 0;
 }
 
+h1 {
+  color: #1E2019;
+}
+
+h2 {
+  text-align: center;
+  color: #1E2019;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #467599;
 }
 
 .wrapper {
@@ -36,11 +40,11 @@ header {
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: #EDE6E3;
   border-radius: 5px;
   border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
+  box-shadow: black 0px 2px 8px 0px;
+  color: 3B4954;
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
@@ -51,7 +55,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: var(--main-bg-color);
+  background: #E9FFF9;
   height: 2px;
 }
 
@@ -67,7 +71,7 @@ header {
   content: " ";
   display: block;
   width: 100%;
-  background: var(--main-bg-color);
+  background: #467599
   height: 2px;
 }
 
@@ -79,11 +83,10 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #D64045;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
+  box-shadow: black 0px 1px 6px 0px black 0px 1px 1px 0px;
+  color: white;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -91,11 +94,17 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out
 }
 
+.glow-button:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
 button[disabled] {
   cursor: default;
-  background: var(--light-blue);
+  background: #467599;
 }
 
 .float-right {
@@ -117,10 +126,11 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed var(--light-blue);
+  border: 2px dashed #467599;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+  background-color: #EDE6E3;
 }
 
 @media (max-width: 690px) {
