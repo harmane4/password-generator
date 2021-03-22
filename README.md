@@ -30,7 +30,11 @@ Websites used to create application:
 
 [Password-Generator](https://github.com/TiffanyCasey/Password-Generator)
 
-[Math.random()] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+[Math random](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+[Window prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
+
+[While Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 
 ## License 
 [MIT](https://choosealicense.com/licenses/mit/)
