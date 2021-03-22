@@ -8,7 +8,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Various strings for passwords
 number = String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-symbol = '!@#$%^&*()+<>';
+symbol = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 lowerChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 upperChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 
