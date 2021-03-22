@@ -6,7 +6,7 @@ var generateBtn = document.querySelector("#generate")
 generateBtn.addEventListener("click", writePassword);
 
 
-// Various strings for passwords
+// Various strings and array for passwords
 number = String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 symbol = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
 lowerChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
