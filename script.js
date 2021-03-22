@@ -1,13 +1,16 @@
 // The Password generator will provide a password with 8-128  characters based on criteria the user specifies.
 
-//Assignment Code + Event Listener to prompt questions when button pushed
-document.querySelector("#generate").addEventListener("click", writePassword);
+// Assignment Code 
+var generateBtn = document.querySelector("#generate")
+// Add event listener to generate button 
+generateBtn.addEventListener("click", writePassword);
 
-// Various variables for passwords
-var number = String.fromCharCode(Math.floor(Math.random() * 10) + 48)
-var symbol = '!@#$%^&*()+<>';
-var lowerChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97)
-var upperChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+
+// Various strings for passwords
+number = String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+symbol = '!@#$%^&*()+<>';
+lowerChar = String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+upperChar = String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 
 // Variable Declaration 
 var confirmLength = "";
@@ -23,27 +26,27 @@ function generatePassword() {
   // Loop if answer is outside the parameters 
   while(confirmLength <= 7 || confirmLength >= 129) {
       alert("Password length must be between 8-128 characters Try again");
-      var confirmLength = (prompt("How many characters between 8 - 128 will your password to contain?"));
+      var confirmLength = (prompt("How many characters between 8 - 128 will your password contain?"));
       } 
 
     // Determine parameters of password 
     var confirmSymbolCharacter = confirm("Will your password include symbols?");
-    var confirmNumericCharacter = confirm("Will your password  include numbers?");    
+    var confirmNumericCharacter = confirm("Will your password include numbers?");    
     var confirmLowerCase = confirm("Will your password include lowercase characters?");
     var confirmUpperCase = confirm("Will your password include uppercase characters?");
      
     // Loop if answer is outside the parameters 
       while(confirmUpperCase === false && confirmLowerCase === false && confirmSymbolCharacter === false && confirmNumericCharacter === false) {
         alert("You must choose at least one answer");
-        var confirmSybolCharacter = confirm("Will your password include symbols?");
-        var confirmNumericCharacter = confirm("Will your password include numeric characters?");    
-        var confirmLowerCase = confirm("Will your password  include lowercase characters?");
-        var confirmUpperCase = confirm("Will your password  include uppercase characters?");   
+        var confirmSymbolCharacter = confirm("Will your password include symbols?");
+        var confirmNumericCharacter = confirm("Will your password include numbers");    
+        var confirmLowerCase = confirm("Will your password include lowercase characters?");
+        var confirmUpperCase = confirm("Will your password include uppercase characters?");   
     } 
 
       // Assign an action to the password parameters. Concat method joins passwordCharacters and specialChar/number/lowerChar,upperChar and returns new array
       // Conditional statement only executed if expression is true 
-      var passwordCharacters = [] //create empty array 
+      var passwordCharacters = [] //create empty string 
       
     if (confirmSymbolCharacter) {
       passwordCharacters = passwordCharacters.concat(symbol) 
@@ -63,7 +66,7 @@ function generatePassword() {
 
       console.log(passwordCharacters)
 
-      // Empty string to be filled based on for loop selecting random characters from the array
+      // Empty string to be filled based on for loop selecting random characters from the password variables 
       var randomPassword = []
       
       // For loop starts at 0, runs while i is less than length of variable confirmLength
