@@ -17,7 +17,7 @@ I had an immense amount of problems with this application. I was unable to creat
 
 ## Usage
  
-![Screen-shot-of-final-product](assests/images/Password-gen-screenshot.png)
+![Screen-shot-of-final-product](assests/images/Password-Generator-Screenshot.png)
 
 [Link to deployed application](https://github.com/harmane4/password-generator)
 
